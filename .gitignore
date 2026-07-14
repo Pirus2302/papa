@@ -1,0 +1,7 @@
+# dev helpers / source originals — not needed on the published site
+Контент/
+server.cjs
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
