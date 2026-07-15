@@ -38,6 +38,28 @@ a:hover{color:#6f231d}
 .candlewrap.blown .hint{color:#8f2f28}
 .candlewrap.blown .wish{opacity:1;height:auto}
 
+/* birthday cake */
+.cake{position:relative;width:220px;height:196px;margin:0 auto}
+.cake .plate{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:212px;height:26px;background:radial-gradient(50% 72% at 50% 34%,#fffaf3,#ecdac3 72%,#d3bda1);border-radius:50%;box-shadow:0 16px 26px rgba(60,40,20,.32)}
+.cake .tier{position:absolute;left:50%;transform:translateX(-50%);background:linear-gradient(#fff5e9,#f0d7ba);border-radius:12px;box-shadow:inset 0 -10px 16px rgba(180,140,100,.28)}
+.cake .t-bottom{bottom:14px;width:182px;height:66px}
+.cake .t-top{bottom:72px;width:128px;height:56px}
+.cake .frost{position:absolute;left:50%;transform:translateX(-50%);height:15px;background:#f8ddc9;border-radius:9px 9px 3px 3px;z-index:2}
+.cake .frost::after{content:"";position:absolute;left:2px;right:2px;bottom:-7px;height:11px;background:radial-gradient(circle at 8px -1px,#f8ddc9 7px,transparent 8px) repeat-x;background-size:16px 11px}
+.cake .f-bottom{bottom:72px;width:182px}
+.cake .f-top{bottom:124px;width:128px}
+.cake .insc{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);font-family:"Marck Script",cursive;font-size:1.7rem;color:#8f2f28;z-index:3}
+.cake .candles{position:absolute;bottom:128px;left:50%;transform:translateX(-50%);display:flex;gap:15px;z-index:4}
+.cake .cand{position:relative;width:7px;height:36px;border-radius:2px;background:repeating-linear-gradient(45deg,#d98f6b 0 5px,#fff 5px 10px);box-shadow:0 2px 3px rgba(0,0,0,.15)}
+.cake .cand .fl{position:absolute;top:-16px;left:50%;transform:translateX(-50%);width:11px;height:18px;background:radial-gradient(circle at 50% 70%,#fff3c4,#ffb733 45%,#ff7b2e 78%,transparent 82%);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;transform-origin:bottom center;animation:flick .16s ease-in-out infinite alternate;box-shadow:0 -5px 20px 4px rgba(255,150,50,.55)}
+.cake .cand .sm{position:absolute;top:-18px;left:50%;width:4px;height:20px;margin-left:-2px;background:linear-gradient(transparent,rgba(150,120,90,.5));border-radius:50%;opacity:0}
+.candlewrap.blown .cake .fl{opacity:0;animation:none;box-shadow:none;transition:opacity .35s}
+.candlewrap.blown .cake .cand:nth-child(2) .fl{transition-delay:.12s}
+.candlewrap.blown .cake .cand:nth-child(3) .fl{transition-delay:.24s}
+.candlewrap.blown .cake .cand:nth-child(4) .fl{transition-delay:.36s}
+.candlewrap.blown .cake .cand:nth-child(5) .fl{transition-delay:.48s}
+.candlewrap.blown .cake .sm{animation:smoke 2.4s ease-out forwards}
+
 /* site reveal after envelope */
 #site{opacity:0;transition:opacity .8s ease}
 body.opened #site{opacity:1}
@@ -82,8 +104,7 @@ body.opened #site{opacity:1}
       <img src="img/p1.jpg" alt="Папа и дочь" style="width:100%;aspect-ratio:4/5;object-fit:cover">
       <figcaption style="position:absolute;left:0;bottom:12px;width:100%;text-align:center;font-family:'Marck Script',cursive;font-size:1.4rem;color:#5a3d22">папа и я</figcaption>
     </figure>
-    <p style="font-size:1.08rem;margin-bottom:16px">Тебе сегодня 51. И это письмо — про то, что обычно не говорится вслух. Мы собрали здесь всё самое главное. Про тебя.</p>
-    <p style="font-size:1.08rem;margin-bottom:8px">Столько всего хочется сказать, что я решила просто написать тебе. Как в старые времена — от руки, от сердца.</p>
+    <p style="font-size:1.08rem;margin-bottom:8px">Вот и стукнуло тебе 51. И это письмо — про то, что обычно не говорят вслух. Я собрала здесь всё самое важное. Про тебя.</p>
 
     <!-- Суперспособности -->
     <div style="clear:both;font-family:'Marck Script',cursive;font-size:clamp(1.5rem,4vw,2rem);color:#8f2f28;margin:44px 0 6px">Сначала — про то, что делает тебя тобой.</div>
@@ -97,9 +118,28 @@ body.opened #site{opacity:1}
       </div>
       <div style="display:grid;gap:0;align-content:start">
         <div style="display:grid;grid-template-columns:auto 1fr;gap:14px;padding:12px 0;border-top:1px solid rgba(74,51,32,.16)"><span style="font-family:'Marck Script',cursive;font-style:italic;color:#8f2f28;font-size:1.05rem">03</span><p style="font-size:1.05rem"><strong style="font-family:'Shantell Sans',cursive;font-weight:700;color:#3a2718">Решаешь любой вопрос.</strong> Одним звонком, одной поездкой, одним «сейчас разберёмся». И правда разбираешься.</p></div>
-        <div style="display:grid;grid-template-columns:auto 1fr;gap:14px;padding:12px 0;border-top:1px solid rgba(74,51,32,.16)"><span style="font-family:'Marck Script',cursive;font-style:italic;color:#8f2f28;font-size:1.05rem">04</span><p style="font-size:1.05rem"><strong style="font-family:'Shantell Sans',cursive;font-weight:700;color:#3a2718">Из ничего делаешь праздник.</strong> Накрыть стол на весь дом, собрать всех вместе — это твоё. За таким столом хочется остаться подольше.</p></div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:14px;padding:12px 0;border-top:1px solid rgba(74,51,32,.16)"><span style="font-family:'Marck Script',cursive;font-style:italic;color:#8f2f28;font-size:1.05rem">04</span><p style="font-size:1.05rem"><strong style="font-family:'Shantell Sans',cursive;font-weight:700;color:#3a2718">Из ничего делаешь праздник.</strong> Собрать всех вместе за одним столом, даже очень незнакомых друг другу людей, и сделать праздник — это твоё.</p></div>
         <div style="display:grid;grid-template-columns:auto 1fr;gap:14px;padding:12px 0;border-top:1px solid rgba(74,51,32,.16)"><span style="font-family:'Marck Script',cursive;font-style:italic;color:#8f2f28;font-size:1.05rem">05</span><p style="font-size:1.05rem"><strong style="font-family:'Shantell Sans',cursive;font-weight:700;color:#3a2718">Обнимешь — и страшное становится маленьким.</strong> Любая проблема рядом с тобой почему-то уменьшается в размерах.</p></div>
-        <div style="display:grid;grid-template-columns:auto 1fr;gap:14px;padding:12px 0;border-top:1px solid rgba(74,51,32,.16);border-bottom:1px solid rgba(74,51,32,.16)"><span style="font-family:'Marck Script',cursive;font-style:italic;color:#8f2f28;font-size:1.05rem">06</span><p style="font-size:1.05rem"><strong style="font-family:'Shantell Sans',cursive;font-weight:700;color:#3a2718">Договоришься с кем угодно.</strong> Спокойно, по-своему — и всегда по-честному. Этому невозможно научить, только перенять.</p></div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:14px;padding:12px 0;border-top:1px solid rgba(74,51,32,.16)"><span style="font-family:'Marck Script',cursive;font-style:italic;color:#8f2f28;font-size:1.05rem">06</span><p style="font-size:1.05rem"><strong style="font-family:'Shantell Sans',cursive;font-weight:700;color:#3a2718">Договоришься с кем угодно.</strong> Спокойно, по-своему — и всегда по-честному. Этому невозможно научить, только перенять.</p></div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:14px;padding:12px 0;border-top:1px solid rgba(74,51,32,.16);border-bottom:1px solid rgba(74,51,32,.16)"><span style="font-family:'Marck Script',cursive;font-style:italic;color:#8f2f28;font-size:1.05rem">07</span><p style="font-size:1.05rem"><strong style="font-family:'Shantell Sans',cursive;font-weight:700;color:#3a2718">Спишь по 3 часа — и не сдаёшься.</strong> Меняя одну работу на другую, ты умудрялся спать по три часа, только чтобы сделать нашу жизнь лучше.</p></div>
+      </div>
+    </div>
+
+    <!-- Тотемные животные -->
+    <div style="clear:both;font-family:'Marck Script',cursive;font-size:clamp(1.5rem,4vw,2rem);color:#8f2f28;margin:44px 0 6px">А ещё у тебя есть тотемные животные.</div>
+    <h2 style="font-family:'Marck Script',cursive;font-weight:700;font-size:clamp(1.5rem,3.6vw,2.1rem);color:#3a2718;margin-bottom:16px">Твои тотемные животные</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+      <div style="background:rgba(143,47,40,.05);border:1px solid rgba(143,47,40,.18);border-radius:6px;padding:18px 20px">
+        <div style="font-family:'Marck Script',cursive;font-size:1.5rem;color:#8f2f28;margin-bottom:6px">🐹 Папа-хомяк</div>
+        <p style="font-size:1.04rem">Фраза «всё в дом» — это точно про тебя. Когда под тобой много зёрнышек, ты спокоен. А как только зёрнышки начинают заканчиваться — у тебя включается пропеллер.</p>
+      </div>
+      <div style="background:rgba(143,47,40,.05);border:1px solid rgba(143,47,40,.18);border-radius:6px;padding:18px 20px">
+        <div style="font-family:'Marck Script',cursive;font-size:1.5rem;color:#8f2f28;margin-bottom:6px">🐔 Папа-курица</div>
+        <p style="font-size:1.04rem">Никто так не кудахчет над своими цыплятами, как наш папа. И мы тебя очень любим за это.</p>
+      </div>
+      <div style="background:rgba(143,47,40,.05);border:1px solid rgba(143,47,40,.18);border-radius:6px;padding:18px 20px">
+        <div style="font-family:'Marck Script',cursive;font-size:1.5rem;color:#8f2f28;margin-bottom:6px">🐸 Папа-лягушка</div>
+        <p style="font-size:1.04rem">У тебя есть феноменальная способность залезть глубоко в *** и героически оттуда вылезти, обретя при этом новую суперсилу. Как та лягушка, что попала в кувшин с молоком и сбила из него масло.</p>
       </div>
     </div>
 
@@ -109,41 +149,41 @@ body.opened #site{opacity:1}
 
     <div style="overflow:hidden;margin-bottom:30px">
       <div style="font-family:'Marck Script',cursive;color:#8f2f28;font-size:1.4rem">воспоминание, от которого щемит в сердце</div><figure style="float:right;width:clamp(160px,42%,230px);margin:4px 0 14px 26px;background:#faf3e7;padding:10px 10px 36px;box-shadow:0 16px 32px rgba(60,38,18,.32);transform:rotate(2deg);border-radius:2px;position:relative"><span style="position:absolute;top:-13px;left:50%;transform:translateX(-50%) rotate(-3deg);width:90px;height:24px;background:rgba(143,47,40,.2)"></span><img src="img/p5.jpg" alt="Папа и дочь" style="width:100%;aspect-ratio:4/5;object-fit:cover"></figure>
-      <h3 style="font-family:'Marck Script',cursive;font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem);color:#3a2718;margin-bottom:10px">Кукла и рваные кроссовки</h3>
-      <p style="font-size:1.06rem;margin-bottom:12px">Когда я была маленькой, мы пошли на последние деньги — то ли мне за джинсами, то ли тебе за кроссовками. Ты тогда себе так ничего и не купил и ходил в рваных кроссовках. Зато втихаря от мамы принёс мне огромную красивую куклу — она умела разговаривать и даже «есть». По тем временам это была супер-пупер кукла, которой не было ни у кого.</p>
-      <p style="font-family:'Marck Script',cursive;font-style:italic;font-size:clamp(1.2rem,2.6vw,1.5rem);color:#8f2f28;line-height:1.4;border-left:3px solid rgba(143,47,40,.4);padding-left:16px">Только с годами я поняла, что это было за решение — отдать последнее, чтобы у меня загорелись глаза.</p>
+      <h3 style="font-family:'Marck Script',cursive;font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem);color:#3a2718;margin-bottom:10px">Супер дорогая кукла, подаренная втихаря от мамы</h3>
+      <p style="font-size:1.06rem;margin-bottom:12px">Когда я была маленькой, мы пошли на последние деньги — то ли мне за джинсами, то ли тебе за кроссовками. Ты тогда себе так ничего и не купил и ходил в рваных кроссовках. Зато втихаря от мамы принёс мне огромную красивую куклу — она умела разговаривать и даже «есть».</p>
+      <p style="font-family:'Marck Script',cursive;font-style:italic;font-size:clamp(1.2rem,2.6vw,1.5rem);color:#8f2f28;line-height:1.4;border-left:3px solid rgba(143,47,40,.4);padding-left:16px">Я до сих пор вспоминаю эту куклу со слезами счастья на глазах — за то, что у меня такой чудесный папа.</p>
     </div>
 
     <div style="overflow:hidden;margin-bottom:30px">
       <figure style="float:left;width:clamp(150px,38%,200px);margin:4px 26px 12px 0;background:#faf3e7;padding:9px 9px 12px;box-shadow:0 16px 32px rgba(60,38,18,.32);transform:rotate(-2deg);border-radius:2px"><img src="img/p8.jpg" alt="Родители на закате" style="width:100%;aspect-ratio:4/5;object-fit:cover"></figure>
       <div style="font-family:'Marck Script',cursive;color:#8f2f28;font-size:1.35rem">детство</div>
-      <h3 style="font-family:'Marck Script',cursive;font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem);color:#3a2718;margin-bottom:10px">Море, машина и палатки</h3>
-      <p style="font-size:1.06rem;margin-bottom:10px">Мы ездили на море на машине и ночевали в палатках. И так — несколько раз.</p>
-      <p style="font-size:1.05rem;color:#6b5137;font-style:italic">Одно из самых тёплых и свободных детских воспоминаний. Дорога, ты за рулём, и впереди целое море.</p>
+      <h3 style="font-family:'Marck Script',cursive;font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem);color:#3a2718;margin-bottom:10px">Наши поездки на море с палатками</h3>
+      <p style="font-size:1.06rem;margin-bottom:10px">Помнишь, как возил нас всей семьёй в Абрау-Дюрсо? Спасибо тебе за эти волшебные воспоминания! Виноградники, гора Эльбрус, целебные грязи…</p>
+      <p style="font-size:1.05rem;color:#6b5137;font-style:italic">Всё это мы помним и очень благодарим тебя за такое прекрасное детство.</p>
     </div>
 
     <div style="overflow:hidden;margin-bottom:30px">
       <figure style="float:right;width:clamp(150px,38%,200px);margin:4px 0 12px 26px;background:#faf3e7;padding:9px 9px 12px;box-shadow:0 16px 32px rgba(60,38,18,.32);transform:rotate(2deg);border-radius:2px"><img src="img/p13.jpg" alt="Папа и мама" style="width:100%;aspect-ratio:4/5;object-fit:cover"></figure>
       <div style="font-family:'Marck Script',cursive;color:#8f2f28;font-size:1.35rem">школа жизни</div>
-      <h3 style="font-family:'Marck Script',cursive;font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem);color:#3a2718;margin-bottom:10px">Прилавок на выставках</h3>
-      <p style="font-size:1.06rem;margin-bottom:10px">Перед школой мы всей семьёй продавали канцтовары на выставках. Я слушала, как ты продаёшь, и повторяла за тобой — и у меня начало получаться.</p>
-      <p style="font-size:1.06rem">Именно тогда я научилась стоять за прилавком и не бояться разговаривать с людьми. Это всё — от тебя.</p>
+      <h3 style="font-family:'Marck Script',cursive;font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem);color:#3a2718;margin-bottom:10px">Выставка «Здравствуй, школа!»</h3>
+      <p style="font-size:1.06rem;margin-bottom:10px">А помнишь, как мы продавали канцтовары на выставке «Здравствуй, школа!»? Я до сих пор помню все преимущества циркуля, лишь бы его продать. Я слушала, как ты продаёшь, и повторяла за тобой — и у меня начало получаться.</p>
+      <p style="font-size:1.06rem">Именно тогда я научилась продавать. Теперь я продам что угодно и кому угодно.</p>
     </div>
 
     <div style="overflow:hidden;margin-bottom:30px">
       <figure style="float:left;width:clamp(150px,38%,200px);margin:4px 26px 12px 0;background:#faf3e7;padding:9px 9px 12px;box-shadow:0 16px 32px rgba(60,38,18,.32);transform:rotate(-2deg);border-radius:2px"><img src="img/p9.jpg" alt="Семья" style="width:100%;aspect-ratio:4/5;object-fit:cover"></figure>
       <div style="font-family:'Marck Script',cursive;color:#8f2f28;font-size:1.35rem">первые деньги</div>
-      <h3 style="font-family:'Marck Script',cursive;font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem);color:#3a2718;margin-bottom:10px">Склад, заказы и свой оборот</h3>
-      <p style="font-size:1.06rem;margin-bottom:10px">Моя первая работа тоже была с тобой: я работала на складе, а ты платил мне за это. Потом я уже сама продавала канцтовары в школе — и зарабатывала не «от семьи», а от других детей.</p>
-      <p style="font-size:1.06rem">Я передавала тебе список заказов, ты ездил за товаром в оптовые компании и привозил мне то, что я напродавала. Всё было по-серьёзному.</p>
+      <h3 style="font-family:'Marck Script',cursive;font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem);color:#3a2718;margin-bottom:10px">Мои первые деньги</h3>
+      <p style="font-size:1.06rem;margin-bottom:10px">Моя первая работа и мои первые деньги — у тебя на складе, на бывшем таксопарке. Ты научил меня, что деньги не сваливаются с неба. Но нет ничего невозможного. Потом я уже сама находила возможность зарабатывать и продавала канцтовары одноклассникам.</p>
+      <p style="font-size:1.06rem">До сих пор помню, как передавала тебе список заказов, ты ездил за товаром в оптовые компании и привозил мне то, что я напродавала. Всё было по-серьёзному — и так важно для той маленькой бизнес-вумен, которая теперь уже стала большой.</p>
     </div>
 
     <div style="overflow:hidden;margin-bottom:12px">
       <figure style="float:right;width:clamp(150px,38%,200px);margin:4px 0 12px 26px;background:#faf3e7;padding:9px 9px 12px;box-shadow:0 16px 32px rgba(60,38,18,.32);transform:rotate(2deg);border-radius:2px"><img src="img/p4.jpg" alt="Семья" style="width:100%;aspect-ratio:4/5;object-fit:cover"></figure>
       <div style="font-family:'Marck Script',cursive;color:#8f2f28;font-size:1.35rem">доверие</div>
-      <h3 style="font-family:'Marck Script',cursive;font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem);color:#3a2718;margin-bottom:10px">Бизнес в 12 лет</h3>
-      <p style="font-size:1.06rem;margin-bottom:10px">Однажды вы с мамой уехали в Египет и оставили на меня — 12-летнюю — бизнес. Целых две недели я по-настоящему им руководила: оплачивала счета, договаривалась с людьми.</p>
-      <p style="font-size:1.05rem;color:#6b5137;font-style:italic">Не понарошку. Ты мне доверил — и я справилась. Кажется, тогда я впервые почувствовала, что могу.</p>
+      <h3 style="font-family:'Marck Script',cursive;font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem);color:#3a2718;margin-bottom:10px">Как вы уехали в Египет и оставили бизнес на меня</h3>
+      <p style="font-size:1.06rem;margin-bottom:10px">Помнишь, как вы с мамой уехали вдвоём в Египет и оставили бизнес на меня? Уж не знаю, было ли это по-настоящему. Но для меня это были целых две недели, где я руководила: оплачивала счета, договаривалась с людьми, общалась с клиентами и сотрудниками.</p>
+      <p style="font-size:1.05rem;color:#6b5137;font-style:italic">Не понарошку. Кажется, тогда я впервые почувствовала, что могу. А сейчас рассказываю этот опыт с тёплой улыбкой в бизнес-клубе, среди предпринимателей, — как интересный факт о своей жизни.</p>
     </div>
 
     <!-- Благодарность -->
@@ -157,33 +197,25 @@ body.opened #site{opacity:1}
     <div style="overflow:hidden;margin-bottom:12px">
       <figure style="float:right;width:clamp(150px,36%,190px);margin:4px 0 12px 24px;background:#faf3e7;padding:9px 9px 12px;box-shadow:0 16px 32px rgba(60,38,18,.32);transform:rotate(2deg);border-radius:2px"><img src="img/p11.jpg" alt="Родители вместе" style="width:100%;aspect-ratio:5/4;object-fit:cover"></figure>
       <h3 style="font-family:'Marck Script',cursive;font-style:italic;font-weight:500;font-size:clamp(1.2rem,2.6vw,1.6rem);color:#8f2f28;margin-bottom:10px">За семью, которую ты не рассказывал, а показывал</h3>
-      <p style="font-size:1.06rem">Вы с мамой вместе уже 30 лет, у меня полная семья — и это определило всё моё отношение к браку, к детям, к жизни. Эти ценности ты вложил в меня подкожно. Просто тем, как ты живёшь.</p>
+      <p style="font-size:1.06rem">Вы с мамой вместе уже 30 лет, у меня полная семья — и это определило всё моё отношение к браку, к детям, к жизни. Эти ценности ты вложил в меня внутривенно. Просто тем, как ты живёшь.</p>
     </div>
 
     <!-- Любовь -->
     <div style="clear:both;font-family:'Marck Script',cursive;font-size:clamp(1.5rem,4vw,2rem);color:#8f2f28;margin:48px 0 6px">А любим мы тебя вот за что.</div>
     <ul style="list-style:none;display:grid;gap:10px;margin-bottom:22px">
-      <li style="position:relative;padding-left:30px;font-size:1.06rem"><span style="position:absolute;left:0;top:-2px;color:#8f2f28;font-family:'Marck Script',cursive;font-size:1.4rem">✦</span><em style="font-family:'Marck Script',cursive;font-style:normal;color:#8f2f28;font-size:1.2rem">за то, что</em> ты всегда ставил нас выше себя.</li>
-      <li style="position:relative;padding-left:30px;font-size:1.06rem"><span style="position:absolute;left:0;top:-2px;color:#8f2f28;font-family:'Marck Script',cursive;font-size:1.4rem">✦</span><em style="font-family:'Marck Script',cursive;font-style:normal;color:#8f2f28;font-size:1.2rem">за то, что</em> рядом с тобой ничего не страшно.</li>
       <li style="position:relative;padding-left:30px;font-size:1.06rem"><span style="position:absolute;left:0;top:-2px;color:#8f2f28;font-family:'Marck Script',cursive;font-size:1.4rem">✦</span><em style="font-family:'Marck Script',cursive;font-style:normal;color:#8f2f28;font-size:1.2rem">за то, что</em> ты научил нас не бояться жизни.</li>
       <li style="position:relative;padding-left:30px;font-size:1.06rem"><span style="position:absolute;left:0;top:-2px;color:#8f2f28;font-family:'Marck Script',cursive;font-size:1.4rem">✦</span><em style="font-family:'Marck Script',cursive;font-style:normal;color:#8f2f28;font-size:1.2rem">за то, что</em> ты показал, какой должна быть семья.</li>
-      <li style="position:relative;padding-left:30px;font-size:1.06rem"><span style="position:absolute;left:0;top:-2px;color:#8f2f28;font-family:'Marck Script',cursive;font-size:1.4rem">✦</span><em style="font-family:'Marck Script',cursive;font-style:normal;color:#8f2f28;font-size:1.2rem">за то, что</em> на тебя можно опереться в любой момент.</li>
+      <li style="position:relative;padding-left:30px;font-size:1.06rem"><span style="position:absolute;left:0;top:-2px;color:#8f2f28;font-family:'Marck Script',cursive;font-size:1.4rem">✦</span><em style="font-family:'Marck Script',cursive;font-style:normal;color:#8f2f28;font-size:1.2rem">за то, что</em> в самые критичные моменты мы всегда звоним тебе.</li>
+      <li style="position:relative;padding-left:30px;font-size:1.06rem"><span style="position:absolute;left:0;top:-2px;color:#8f2f28;font-family:'Marck Script',cursive;font-size:1.4rem">✦</span><em style="font-family:'Marck Script',cursive;font-style:normal;color:#8f2f28;font-size:1.2rem">за то,</em> как много ты работал и уставал, чтобы мы жили хорошо.</li>
+      <li style="position:relative;padding-left:30px;font-size:1.06rem"><span style="position:absolute;left:0;top:-2px;color:#8f2f28;font-family:'Marck Script',cursive;font-size:1.4rem">✦</span><em style="font-family:'Marck Script',cursive;font-style:normal;color:#8f2f28;font-size:1.2rem">за то, что</em> построил для нас такой большой дом.</li>
+      <li style="position:relative;padding-left:30px;font-size:1.06rem"><span style="position:absolute;left:0;top:-2px;color:#8f2f28;font-family:'Marck Script',cursive;font-size:1.4rem">✦</span><em style="font-family:'Marck Script',cursive;font-style:normal;color:#8f2f28;font-size:1.2rem">за то,</em> как научил нас справляться с трудностями жизни.</li>
+      <li style="position:relative;padding-left:30px;font-size:1.06rem"><span style="position:absolute;left:0;top:-2px;color:#8f2f28;font-family:'Marck Script',cursive;font-size:1.4rem">✦</span><em style="font-family:'Marck Script',cursive;font-style:normal;color:#8f2f28;font-size:1.2rem">за то, что</em> оберегал нас в те моменты, даже когда мы были с этим не согласны.</li>
       <li style="position:relative;padding-left:30px;font-size:1.06rem"><span style="position:absolute;left:0;top:-2px;color:#8f2f28;font-family:'Marck Script',cursive;font-size:1.4rem">✦</span><em style="font-family:'Marck Script',cursive;font-style:normal;color:#8f2f28;font-size:1.2rem">просто</em> потому что ты — наш папуля.</li>
     </ul>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px">
       <figure style="background:#faf3e7;padding:8px;box-shadow:0 12px 24px rgba(60,38,18,.28);transform:rotate(-2deg);border-radius:2px"><img src="img/p7.jpg" alt="Семья" style="width:100%;aspect-ratio:1;object-fit:cover"></figure>
       <figure style="background:#faf3e7;padding:8px;box-shadow:0 12px 24px rgba(60,38,18,.28);transform:rotate(1.5deg);border-radius:2px"><img src="img/p6.jpg" alt="Семья" style="width:100%;aspect-ratio:1;object-fit:cover"></figure>
       <figure style="background:#faf3e7;padding:8px;box-shadow:0 12px 24px rgba(60,38,18,.28);transform:rotate(-1deg);border-radius:2px"><img src="img/p10.jpg" alt="Семья" style="width:100%;aspect-ratio:1;object-fit:cover"></figure>
-    </div>
-
-    <!-- Видео -->
-    <div style="clear:both;font-family:'Marck Script',cursive;font-size:clamp(1.5rem,4vw,2rem);color:#8f2f28;margin:48px 0 6px">И немного живых моментов.</div>
-    <h2 style="font-family:'Marck Script',cursive;font-weight:700;font-size:clamp(1.5rem,3.6vw,2.1rem);color:#3a2718;margin-bottom:6px">Как это звучит</h2>
-    <p style="font-size:1.05rem;color:#4a3320;margin-bottom:16px">Несколько живых кусочков нашей жизни. Нажми, чтобы включить.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px">
-      <video src="video/v1.mp4" controls preload="none" playsinline poster="img/vp1.jpg" style="width:100%;border-radius:10px;border:1px solid rgba(74,51,32,.3);box-shadow:0 14px 28px rgba(60,38,18,.28);background:#000;aspect-ratio:9/16;object-fit:cover"></video>
-      <video src="video/v2.mp4" controls preload="none" playsinline poster="img/vp2.jpg" style="width:100%;border-radius:10px;border:1px solid rgba(74,51,32,.3);box-shadow:0 14px 28px rgba(60,38,18,.28);background:#000;aspect-ratio:9/16;object-fit:cover"></video>
-      <video src="video/v3.mp4" controls preload="none" playsinline poster="img/vp3.jpg" style="width:100%;border-radius:10px;border:1px solid rgba(74,51,32,.3);box-shadow:0 14px 28px rgba(60,38,18,.28);background:#000;aspect-ratio:9/16;object-fit:cover"></video>
     </div>
 
     <!-- Финал -->
@@ -193,18 +225,27 @@ body.opened #site{opacity:1}
       <h2 style="font-family:'Marck Script',cursive;font-weight:700;font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.02;color:#3a2718;margin-bottom:16px">С 51-м, <em style="font-style:italic;color:#8f2f28;font-weight:500">папуля</em></h2>
       <p style="max-width:40ch;margin:0 auto;color:#4a3320;font-size:1.05rem">Спасибо, что ты у нас есть. Пусть этот год будет к тебе таким же добрым, каким ты всегда был к нам.</p>
       <div style="display:flex;justify-content:center">
-        <div class="candlewrap" id="candle" role="button" tabindex="0" aria-label="Задуть свечу">
-          <div class="candle">
-            <span class="wick"></span>
-            <span class="flame"></span>
-            <span class="smoke"></span>
-            <span class="fifty">51</span>
+        <div class="candlewrap" id="cake" role="button" tabindex="0" aria-label="Задуть свечи на торте">
+          <div class="cake">
+            <div class="plate"></div>
+            <div class="tier t-bottom"></div>
+            <div class="frost f-bottom"></div>
+            <div class="tier t-top"></div>
+            <div class="frost f-top"></div>
+            <div class="insc">51</div>
+            <div class="candles">
+              <span class="cand"><i class="fl"></i><i class="sm"></i></span>
+              <span class="cand"><i class="fl"></i><i class="sm"></i></span>
+              <span class="cand"><i class="fl"></i><i class="sm"></i></span>
+              <span class="cand"><i class="fl"></i><i class="sm"></i></span>
+              <span class="cand"><i class="fl"></i><i class="sm"></i></span>
+            </div>
           </div>
-          <div class="hint">нажми, чтобы задуть свечу</div>
+          <div class="hint">нажми, чтобы задуть свечи</div>
           <div class="wish">Загадали за тебя только одно — чтобы ты был счастлив и здоров ещё очень-очень долго.</div>
         </div>
       </div>
-      <div style="font-family:'Marck Script',cursive;font-size:clamp(1.8rem,5vw,2.7rem);color:#8f2f28;line-height:1.2;margin-top:16px">Твои Юля, Наташа и Владик<small style="display:block;font-family:'Marck Script',cursive;font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:#9c8873;margin-top:12px">с любовью ♥</small></div>
+      <div style="font-family:'Marck Script',cursive;font-size:clamp(1.8rem,5vw,2.7rem);color:#8f2f28;line-height:1.2;margin-top:16px">Твоя любимая семья — Наташа, Юля и Владик<small style="display:block;font-family:'Marck Script',cursive;font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:#9c8873;margin-top:12px">с любовью ♥</small></div>
     </div>
 
   </article>
@@ -258,9 +299,9 @@ body.opened #site{opacity:1}
   }
 })();
 
-// ===== candle =====
+// ===== cake candles =====
 (function(){
-  var c=document.getElementById('candle'); if(!c) return;
+  var c=document.getElementById('cake'); if(!c) return;
   var hint=c.querySelector('.hint');
   function blow(){ if(c.classList.contains('blown')) return; c.classList.add('blown'); hint.textContent='загадай желание…'; }
   c.addEventListener('click',blow);
